@@ -296,6 +296,11 @@ $left-gutter: 64px;
 }
 
 .mx_EventTile_body {
+    /* When annotated (e.g. with the "(edited)" marker), the body is a flex item. Allow it to shrink below
+       its content's intrinsic width so that wide content (e.g. code blocks) scrolls rather than pushing
+       the rest of the message out of view. */
+    min-width: 0;
+
     pre {
         border: 1px solid transparent;
 

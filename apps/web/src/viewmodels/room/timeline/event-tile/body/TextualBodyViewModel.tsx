@@ -281,7 +281,8 @@ export class TextualBodyViewModel
             target = target.closest<HTMLLinkElement>("a");
         }
 
-        if (!target) {
+        // Pills handle their own clicks (e.g. opening the user's profile in the right panel)
+        if (!target || target.classList?.contains("mx_Pill")) {
             return;
         }
 
